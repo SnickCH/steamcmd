@@ -3,7 +3,7 @@
 A base image for docker with steamcmd installed to build dedicated servers that is updated frequently. It is created but at the moment only available as ":test" branch. I will first test it, then create the full documentation. 
 
 Creation date: 24.July 2020
+The image works and is built on a daily base. I added an example dockerfile on how you can build a game server.
 
-Work In progress. Documentation will be done soon
-
-
+Docker Hub: https://hub.docker.com/r/snickch/steamcmd
+  
