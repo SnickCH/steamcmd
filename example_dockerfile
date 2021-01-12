@@ -1,0 +1,21 @@
+###########################################################
+# This is an example file on how you can use this steamcmd docker image to build your own docker image
+# Dockerfile that builds a Insurgency Sandstorm Gameserver 
+#(Steam App ID 581330)
+#Version 0.3
+#Author: SnickCH - snick@morea.ch
+###########################################################
+#Use snickch/steamcmd as the base image
+FROM snickch/steamcmd
+
+#Install the insurgency dedicated server and validate its file
+RUN set -x \
+	&& /home/steam/steamcmd/steamcmd.sh +login  anonymous +force_install_dir /home/steam/steamcmd/sandstorm/ +app_update 581330 validate +quit  \
+	&& mkdir -p /home/steam/steamcmd/sandstorm/Insurgency/Mods
+
+#Set the workdir of the container to the binary directory. 
+#This is important, so users can override my "CMD" startpoint and are directly in the dir where the binaries are
+WORKDIR /home/steam/steamcmd/sandstorm/Insurgency/Binaries/Linux/
+
+#Optional: The server will be started with the the standard settings
+CMD ["/home/steam/steamcmd/sandstorm/Insurgency/Binaries/Linux/InsurgencyServer-Linux-Shipping"]
