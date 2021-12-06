@@ -6,5 +6,5 @@ The image works and is built on a daily base. I added an example dockerfile on h
 
 Docker Hub: https://hub.docker.com/r/snickch/steamcmd
 
-Edit January 2021: If you start from scratch it may be better to use the now official available steamcmd image (https://hub.docker.com/r/steamcmd/steamcmd) which is available with different tags (like Alpine).
+Edit January 2021: If you start from scratch it may be better to use the steamcmd image (https://hub.docker.com/r/steamcmd/steamcmd) which is available with different tags (like Alpine). It should also be updated every 6 hours.
   
